@@ -1,22 +1,24 @@
-import { useState } from 'react';
+import React, { useState } from "react";
 
-import Button from './button';
-
-function App() {
+const Counter = () => {
   const [number, setNumber] = useState(1);
 
-  const onIncrease = () => {
-    setNumber(number + 1); 
-  }
+  const increaseNumber = () => {
+    setNumber(number + 1);
+   };
+
+  const decreaseNumber = () => { 
+    setNumber(number - 1);
+     
+  };
 
   return (
     <div>
-      <Button type= ''onClick={onIncrease} />
-      <div>{number}</div>
-      <Button onClick={onIncrease} />
-
+      <h1>{number}</h1>
+      <button onClick={increaseNumber}>+1</button>
+      <button onClick={decreaseNumber}>-1</button>
     </div>
   );
-}
+};
 
-export default App;
+export default Counter;
